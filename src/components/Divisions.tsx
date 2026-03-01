@@ -37,7 +37,7 @@ export const Divisions: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-3 gap-[1px] bg-border border border-border rounded-3xl overflow-hidden reveal">
+				<div className="grid md:grid-cols-2 gap-[1px] bg-border border border-border rounded-3xl overflow-hidden reveal">
 					{divisions.items.map((item) => (
 						<a
 							key={item.id}

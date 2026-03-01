@@ -45,10 +45,10 @@ export const Hero: React.FC = () => {
 					className="font-serif text-[clamp(2.8rem,6vw,5rem)] font-semibold leading-[1.08] tracking-tight text-foreground mb-6 animate-fade-up"
 					style={{ animationDelay: "0.2s" }}
 				>
-					Building <em className="italic text-primary not-italic">Trust</em> at
-					the
+					Building <em className="italic text-primary not-italic">Trust</em>{" "}
+					Across
 					<br />
-					Root of Rural Commerce
+					Technology, Agriculture & Enterprise
 				</h1>
 
 				<p

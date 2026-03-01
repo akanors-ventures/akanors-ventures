@@ -16,8 +16,9 @@ export const Cta: React.FC = () => {
 
 				<p className="text-[0.9rem] text-muted-foreground leading-relaxed max-w-xl mx-auto mb-10">
 					Whether you are an Islamic bank, development finance institution,
-					agribusiness buyer, or community leader — there is a place for you
-					within the Akanors ecosystem.
+					agribusiness buyer, institutional investor, researcher, entrepreneur,
+					or community leader — there is a place for you in the Akanors
+					ecosystem.
 				</p>
 
 				<div className="flex flex-wrap gap-4 justify-center">

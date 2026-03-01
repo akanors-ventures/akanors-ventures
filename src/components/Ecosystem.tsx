@@ -15,7 +15,7 @@ export const Ecosystem: React.FC = () => {
 					{ecosystem.label}
 				</p>
 				<h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-foreground text-center mb-16">
-					Not Three Businesses.
+					Not Four Businesses.
 					<br />
 					<em className="not-italic text-primary">One System.</em>
 				</h2>
@@ -26,15 +26,16 @@ export const Ecosystem: React.FC = () => {
 						{/* SVG connecting lines — use style prop so CSS vars resolve correctly */}
 						<svg
 							className="absolute inset-0 w-full h-full pointer-events-none"
-							viewBox="0 0 400 360"
+							viewBox="0 0 400 400"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>Ecosystem connection diagram</title>
+							{/* Top — Wathīqah */}
 							<line
 								x1="200"
-								y1="180"
+								y1="200"
 								x2="200"
-								y2="80"
+								y2="64"
 								style={{
 									stroke:
 										"color-mix(in oklch, var(--primary) 30%, transparent)",
@@ -42,11 +43,12 @@ export const Ecosystem: React.FC = () => {
 								strokeWidth="1.5"
 								strokeDasharray="4 4"
 							/>
+							{/* Right — Agriculture */}
 							<line
 								x1="200"
-								y1="180"
-								x2="310"
-								y2="290"
+								y1="200"
+								x2="376"
+								y2="200"
 								style={{
 									stroke:
 										"color-mix(in oklch, var(--primary) 30%, transparent)",
@@ -54,11 +56,25 @@ export const Ecosystem: React.FC = () => {
 								strokeWidth="1.5"
 								strokeDasharray="4 4"
 							/>
+							{/* Bottom — RAPI */}
 							<line
 								x1="200"
-								y1="180"
-								x2="90"
-								y2="290"
+								y1="200"
+								x2="200"
+								y2="336"
+								style={{
+									stroke:
+										"color-mix(in oklch, var(--primary) 30%, transparent)",
+								}}
+								strokeWidth="1.5"
+								strokeDasharray="4 4"
+							/>
+							{/* Left — Akanors Labs */}
+							<line
+								x1="200"
+								y1="200"
+								x2="24"
+								y2="200"
 								style={{
 									stroke:
 										"color-mix(in oklch, var(--primary) 30%, transparent)",
@@ -69,23 +85,15 @@ export const Ecosystem: React.FC = () => {
 
 							<circle
 								cx="200"
-								cy="80"
+								cy="64"
 								r="4"
 								style={{
 									fill: "color-mix(in oklch, var(--primary) 60%, transparent)",
 								}}
 							/>
 							<circle
-								cx="310"
-								cy="290"
-								r="4"
-								style={{
-									fill: "color-mix(in oklch, var(--primary) 60%, transparent)",
-								}}
-							/>
-							<circle
-								cx="90"
-								cy="290"
+								cx="376"
+								cy="200"
 								r="4"
 								style={{
 									fill: "color-mix(in oklch, var(--primary) 60%, transparent)",
@@ -93,7 +101,23 @@ export const Ecosystem: React.FC = () => {
 							/>
 							<circle
 								cx="200"
-								cy="180"
+								cy="336"
+								r="4"
+								style={{
+									fill: "color-mix(in oklch, var(--primary) 60%, transparent)",
+								}}
+							/>
+							<circle
+								cx="24"
+								cy="200"
+								r="4"
+								style={{
+									fill: "color-mix(in oklch, var(--primary) 60%, transparent)",
+								}}
+							/>
+							<circle
+								cx="200"
+								cy="200"
 								r="6"
 								style={{
 									fill: "color-mix(in oklch, var(--primary) 40%, transparent)",
@@ -113,8 +137,8 @@ export const Ecosystem: React.FC = () => {
 							</div>
 						</div>
 
-						{/* Satellite — Wathīqah (top) */}
-						<div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
+						{/* Top — Wathīqah */}
+						<div className="absolute top-[4%] left-1/2 -translate-x-1/2 w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
 							<span className="text-2xl group-hover:scale-110 transition-transform">
 								📋
 							</span>
@@ -126,8 +150,21 @@ export const Ecosystem: React.FC = () => {
 							</span>
 						</div>
 
-						{/* Satellite — RAPI (bottom-right) */}
-						<div className="absolute bottom-[5%] right-[5%] w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
+						{/* Right — Agriculture & Livestock */}
+						<div className="absolute top-1/2 right-[2%] -translate-y-1/2 w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
+							<span className="text-2xl group-hover:scale-110 transition-transform">
+								🌱
+							</span>
+							<span className="font-serif text-sm font-semibold text-foreground">
+								Agriculture
+							</span>
+							<span className="text-[0.6rem] tracking-widest uppercase text-muted-foreground">
+								& Livestock
+							</span>
+						</div>
+
+						{/* Bottom — RAPI */}
+						<div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
 							<span className="text-2xl group-hover:scale-110 transition-transform">
 								🌾
 							</span>
@@ -139,16 +176,16 @@ export const Ecosystem: React.FC = () => {
 							</span>
 						</div>
 
-						{/* Satellite — Livestock (bottom-left) */}
-						<div className="absolute bottom-[5%] left-[5%] w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
+						{/* Left — Akanors Labs */}
+						<div className="absolute top-1/2 left-[2%] -translate-y-1/2 w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
 							<span className="text-2xl group-hover:scale-110 transition-transform">
-								🐑
+								💡
 							</span>
 							<span className="font-serif text-sm font-semibold text-foreground">
-								Livestock
+								Akanors Labs
 							</span>
 							<span className="text-[0.6rem] tracking-widest uppercase text-muted-foreground">
-								Enterprise
+								Innovation
 							</span>
 						</div>
 					</div>
