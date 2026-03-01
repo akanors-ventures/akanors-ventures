@@ -4,6 +4,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { useEffect } from "react";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
+import { NotFound } from "../components/NotFound";
 import { ThemeProvider } from "../components/ThemeContext";
 
 import appCss from "../styles.css?url";
@@ -19,14 +20,15 @@ export const Route = createRootRoute({
 		meta: [
 			{ charSet: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
-			{ title: "Akanors Ventures Ltd — Integrated Rural Commerce & Finance" },
+			{ title: "Akanors Ventures Ltd — Technology, Agriculture & Enterprise" },
 			{
 				name: "description",
 				content:
-					"An integrated Sharia-compliant ecosystem of digital verification, agricultural finance, and livestock enterprise for underserved communities across Nigeria.",
+					"An integrated enterprise spanning digital platforms, agricultural production, and research — anchored in Islamic principles and built to serve clients and communities across Nigeria and beyond.",
 			},
 		],
 		links: [
+			{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
 			{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 			{
 				rel: "preconnect",
@@ -40,6 +42,7 @@ export const Route = createRootRoute({
 			{ rel: "stylesheet", href: appCss },
 		],
 	}),
+	notFoundComponent: NotFound,
 	shellComponent: RootDocument,
 });
 
