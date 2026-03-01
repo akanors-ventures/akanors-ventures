@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import type React from "react";
 import { siteContent } from "../content";
+import { LogoMark } from "./LogoMark";
 
 export const Hero: React.FC = () => {
 	const { hero } = siteContent;
@@ -29,11 +30,7 @@ export const Hero: React.FC = () => {
 					className="flex items-center gap-6 mb-12 animate-fade-up"
 					style={{ animationDelay: "0.1s" }}
 				>
-					<img
-						src="/Akanors_Logo.svg"
-						alt="Akanors Ventures Ltd"
-						className="h-24 w-24 md:h-32 md:w-32 object-contain"
-					/>
+					<LogoMark className="h-[54px] w-auto md:h-[70px] text-primary shrink-0" />
 					<div className="text-left flex flex-col justify-center">
 						<div className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-none mb-1">
 							<span className="text-primary">Akanors</span>

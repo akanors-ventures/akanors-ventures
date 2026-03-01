@@ -1,16 +1,13 @@
 import type React from "react";
+import { LogoMark } from "./LogoMark";
 
 export const Logo: React.FC<{ className?: string; textClassName?: string }> = ({
-	className = "h-14",
+	className = "h-8 w-auto",
 	textClassName = "text-foreground",
 }) => {
 	return (
-		<div className="flex items-center gap-3">
-			<img
-				src="/Akanors_Logo.svg"
-				alt="Akanors Ventures Ltd"
-				className={`${className} object-contain`}
-			/>
+		<div className="flex items-center gap-2">
+			<LogoMark className={`${className} text-primary shrink-0`} />
 			<div
 				className={`font-serif text-[1.15rem] font-semibold tracking-wide leading-tight flex flex-col justify-center ${textClassName}`}
 			>
