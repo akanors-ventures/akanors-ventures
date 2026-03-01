@@ -15,9 +15,11 @@ export const Compliance: React.FC = () => {
 					{compliance.label}
 				</p>
 				<h2 className="font-serif text-[clamp(1.8rem,4vw,3rem)] font-semibold leading-tight text-foreground mb-6">
-					Sharia Compliance
+					{compliance.title}
 					<br />
-					<em className="italic text-primary not-italic">by Design</em>
+					<em className="italic text-primary not-italic">
+						{compliance.titleHighlight}
+					</em>
 				</h2>
 				<p className="text-[0.95rem] text-muted-foreground leading-relaxed max-w-xl mb-12 md:mb-16">
 					{compliance.description}
@@ -37,10 +39,10 @@ export const Compliance: React.FC = () => {
 
 					<div>
 						<h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-4">
-							Islamic Contracts Applied
+							{compliance.contractsTitle}
 						</h3>
 						<p className="text-[0.8rem] text-muted-foreground mb-8 md:mb-10">
-							Across all three divisions of the ecosystem
+							{compliance.contractsSub}
 						</p>
 
 						<div className="grid sm:grid-cols-2 gap-4">

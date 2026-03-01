@@ -1,7 +1,8 @@
 export const siteContent = {
 	hero: {
 		badge: "Technology · Agriculture · Enterprise",
-		title: "Building Trust at the Root of Rural Commerce",
+		headline: "Building Trust Across Technology, Agriculture & Enterprise",
+		headlineHighlight: "Trust",
 		tagline:
 			"An integrated enterprise spanning digital platforms, agricultural production, and research — anchored in Islamic principles and built to serve clients and communities across Nigeria and beyond.",
 		arabic: "الشريعة · الثقة · التجارة",
@@ -70,7 +71,18 @@ export const siteContent = {
 	},
 	ecosystem: {
 		label: "The Integrated Advantage",
-		title: "Not Three Businesses. One System.",
+		title: "Not Four Businesses.",
+		titleHighlight: "One System.",
+		nodes: [
+			{
+				label: "Wathīqah",
+				sub: "Digital Ledger",
+				iconUrl: "https://wathiqah.akanors.com/appLogo.png",
+			},
+			{ label: "Agriculture", sub: "& Livestock", icon: "🌱" },
+			{ label: "RAPI", sub: "Rural Payments", icon: "🌾" },
+			{ label: "Akanors Labs", sub: "Innovation", icon: "💡" },
+		],
 		points: [
 			{
 				icon: "🔗",
@@ -96,12 +108,15 @@ export const siteContent = {
 	},
 	compliance: {
 		label: "Islamic Finance Governance",
-		title: "Sharia Compliance by Design",
+		title: "Sharia Compliance",
+		titleHighlight: "by Design",
 		description:
 			"Every commercial structure across Akanors Ventures Ltd. is governed by a unified Sharia Supervisory Board, ensuring that Islamic principles are the foundation — not an afterthought.",
 		arabicQuote: "بِسْمِ ٱللَّٰهِ\nالرَّحْمَٰنِ الرَّحِيمِ",
 		quoteSub:
 			"In communities where the primary customers are Muslim farming families and financial partners are Islamic banks, Sharia certification is not a compliance checkbox — it is the single most powerful trust signal available.",
+		contractsTitle: "Islamic Contracts Applied",
+		contractsSub: "Across all three divisions of the ecosystem",
 		contracts: [
 			{
 				arabic: "أجرة",
@@ -140,5 +155,16 @@ export const siteContent = {
 			{ label: "Unified Sharia Board", value: "1" },
 			{ label: "Community Trust", value: "∞" },
 		],
+	},
+	cta: {
+		label: "Get Involved",
+		title: "Partner with the",
+		titleHighlight: "Akanors Ecosystem",
+		description:
+			"Whether you are an Islamic bank, development finance institution, agribusiness buyer, institutional investor, researcher, entrepreneur, or community leader — there is a place for you in the Akanors ecosystem.",
+		primaryCta: "Visit Wathīqah →",
+		primaryLink: "https://wathiqah.akanors.com",
+		secondaryCta: "Contact Us",
+		secondaryLink: "mailto:info@akanors.com",
 	},
 };

@@ -6,6 +6,11 @@ import { LogoMark } from "./LogoMark";
 export const Hero: React.FC = () => {
 	const { hero } = siteContent;
 
+	// Split headline around the highlighted word so it can receive primary-colour styling
+	const [headlinePre, headlinePost] = hero.headline.split(
+		hero.headlineHighlight,
+	);
+
 	return (
 		<section className="relative min-h-screen flex flex-col items-center justify-center pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-8 text-center overflow-hidden hero-glow">
 			{/* Decorative background grid */}
@@ -45,9 +50,12 @@ export const Hero: React.FC = () => {
 					className="font-serif text-[clamp(2rem,6vw,5rem)] font-semibold leading-[1.1] tracking-tight text-foreground mb-6 animate-fade-up"
 					style={{ animationDelay: "0.2s" }}
 				>
-					Building <em className="italic text-primary not-italic">Trust</em>{" "}
-					Across Technology,
-					<br className="hidden sm:block" /> Agriculture & Enterprise
+					{headlinePre}
+					<em className="italic text-primary not-italic">
+						{hero.headlineHighlight}
+					</em>
+					<br className="hidden sm:block" />
+					{headlinePost}
 				</h1>
 
 				<p
