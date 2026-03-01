@@ -18,6 +18,7 @@ export const siteContent = {
 			{
 				id: "wathiqah",
 				icon: "📋",
+				iconUrl: "https://wathiqah.akanors.com/appLogo.png",
 				status: "Live",
 				name: "Wathīqah",
 				sub: "وثيقة · Digital Ledger of Trust",

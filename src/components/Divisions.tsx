@@ -52,7 +52,15 @@ export const Divisions: React.FC = () => {
 							<div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
 							<div className="w-12 h-12 flex items-center justify-center text-xl bg-primary/10 border border-primary/20 rounded-lg mb-8">
-								{item.icon}
+								{item.iconUrl ? (
+									<img
+										src={item.iconUrl}
+										alt={item.name}
+										className="w-8 h-8 object-contain"
+									/>
+								) : (
+									item.icon
+								)}
 							</div>
 
 							<div className="flex items-center gap-1.5 text-[0.65rem] font-semibold tracking-widest uppercase mb-4">

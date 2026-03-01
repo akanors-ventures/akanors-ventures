@@ -139,9 +139,11 @@ export const Ecosystem: React.FC = () => {
 
 						{/* Top — Wathīqah */}
 						<div className="absolute top-[4%] left-1/2 -translate-x-1/2 w-32 h-24 bg-card border border-border rounded-2xl flex flex-col items-center justify-center gap-1 shadow-xl hover:border-primary/50 transition-all group">
-							<span className="text-2xl group-hover:scale-110 transition-transform">
-								📋
-							</span>
+							<img
+								src="https://wathiqah.akanors.com/appLogo.png"
+								alt="Wathīqah"
+								className="w-8 h-8 object-contain group-hover:scale-110 transition-transform"
+							/>
 							<span className="font-serif text-sm font-semibold text-foreground">
 								Wathīqah
 							</span>
