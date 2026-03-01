@@ -2,7 +2,7 @@ import type React from "react";
 
 export const Cta: React.FC = () => {
 	return (
-		<section className="py-28 px-8 text-center">
+		<section className="py-16 md:py-28 px-4 sm:px-8 text-center">
 			<div className="max-w-2xl mx-auto reveal">
 				<p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-primary mb-3">
 					Get Involved
@@ -21,7 +21,7 @@ export const Cta: React.FC = () => {
 					ecosystem.
 				</p>
 
-				<div className="flex flex-wrap gap-4 justify-center">
+				<div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center">
 					<a
 						href="https://wathiqah.akanors.com"
 						target="_blank"

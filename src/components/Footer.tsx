@@ -5,10 +5,10 @@ export const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className="bg-card border-t border-border pt-16 pb-8 px-8 md:px-16 transition-colors">
+		<footer className="bg-card border-t border-border pt-12 md:pt-16 pb-8 px-4 sm:px-8 md:px-16 transition-colors">
 			<div className="max-w-6xl mx-auto">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-border">
-					<div className="lg:col-span-1">
+				<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-10 md:pb-12 border-b border-border">
+					<div className="col-span-2 md:col-span-1 lg:col-span-1">
 						<Logo className="h-10" />
 						<p className="text-[0.85rem] text-muted-foreground leading-relaxed max-w-xs mb-6">
 							Building trust infrastructure for Nigeria's rural corridor through

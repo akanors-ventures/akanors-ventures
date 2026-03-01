@@ -9,15 +9,15 @@ export const Divisions: React.FC = () => {
 		// biome-ignore lint/correctness/useUniqueElementIds: static in-page anchor, rendered once
 		<section
 			id="divisions"
-			className="px-8 py-24 bg-muted/30 border-y border-border transition-colors"
+			className="px-4 sm:px-8 py-16 md:py-24 bg-muted/30 border-y border-border transition-colors"
 		>
 			<div className="max-w-6xl mx-auto">
-				<div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+				<div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-16">
 					<div>
 						<p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-primary mb-3">
 							{divisions.label}
 						</p>
-						<h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-foreground">
+						<h2 className="font-serif text-[clamp(1.8rem,4vw,3rem)] font-semibold leading-tight text-foreground">
 							{divisions.title.split(",").map((part) => (
 								<React.Fragment key={part.trim()}>
 									{part.includes("One") ? (
@@ -37,7 +37,7 @@ export const Divisions: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-[1px] bg-border border border-border rounded-3xl overflow-hidden reveal">
+				<div className="grid sm:grid-cols-2 gap-[1px] bg-border border border-border rounded-3xl overflow-hidden reveal">
 					{divisions.items.map((item) => (
 						<a
 							key={item.id}
@@ -46,17 +46,17 @@ export const Divisions: React.FC = () => {
 							rel={
 								item.link.startsWith("http") ? "noopener noreferrer" : undefined
 							}
-							className={`group relative flex flex-col p-10 bg-card hover:bg-muted/50 transition-all ${item.link === "#" ? "pointer-events-none" : ""}`}
+							className={`group relative flex flex-col p-6 sm:p-8 md:p-10 bg-card hover:bg-muted/50 transition-all ${item.link === "#" ? "pointer-events-none" : ""}`}
 						>
 							{/* Top border highlight */}
 							<div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-							<div className="w-12 h-12 flex items-center justify-center text-xl bg-primary/10 border border-primary/20 rounded-lg mb-8">
+							<div className="w-11 h-11 md:w-12 md:h-12 flex items-center justify-center text-xl bg-primary/10 border border-primary/20 rounded-lg mb-6 md:mb-8">
 								{item.iconUrl ? (
 									<img
 										src={item.iconUrl}
 										alt={item.name}
-										className="w-8 h-8 object-contain"
+										className="w-7 h-7 md:w-8 md:h-8 object-contain"
 									/>
 								) : (
 									item.icon
@@ -76,7 +76,7 @@ export const Divisions: React.FC = () => {
 								</span>
 							</div>
 
-							<h3 className="font-serif text-2xl font-semibold text-foreground mb-2 leading-tight">
+							<h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-2 leading-tight">
 								{item.name}
 							</h3>
 
@@ -99,7 +99,7 @@ export const Divisions: React.FC = () => {
 								))}
 							</div>
 
-							<div className="inline-flex items-center gap-2 text-[0.75rem] font-semibold tracking-widest uppercase text-primary mt-8 group-hover:gap-3 transition-all">
+							<div className="inline-flex items-center gap-2 text-[0.75rem] font-semibold tracking-widest uppercase text-primary mt-6 md:mt-8 group-hover:gap-3 transition-all">
 								{item.status === "Live" ? "Visit Platform" : item.status}{" "}
 								<ChevronRight size={12} strokeWidth={3} />
 							</div>
