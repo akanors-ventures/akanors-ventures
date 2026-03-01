@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ── DARK MODE: class-based (.dark on <html>) ── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── STATIC THEME TOKENS (fonts & gold accent) ── */
+@theme {
+  --font-sans:  'DM Sans', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --color-gold: #c8a96e;
+}
+
+/* ── DYNAMIC COLOR TOKENS — backed by CSS vars so they adapt to light/dark ── */
+@theme inline {
+  --color-background:             var(--background);
+  --color-foreground:             var(--foreground);
+  --color-card:                   var(--card);
+  --color-card-foreground:        var(--card-foreground);
+  --color-muted:                  var(--muted);
+  --color-muted-foreground:       var(--muted-foreground);
+  --color-primary:                var(--primary);
+  --color-primary-foreground:     var(--primary-foreground);
+  --color-secondary:              var(--secondary);
+  --color-secondary-foreground:   var(--secondary-foreground);
+  --color-destructive:            var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:                 var(--border);
+  --color-input:                  var(--input);
+  --color-ring:                   var(--ring);
+
+  /* Border radius scale */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+/* ── SEMANTIC CSS CUSTOM PROPERTIES ── */
+@layer base {
+  /* Light mode — DARK_MODE_GUIDE.md: white bg, neutral-950 text, emerald-600 primary */
+  :root {
+    --background:             oklch(1 0 0);               /* White */
+    --foreground:             oklch(0.141 0.005 285.823); /* Neutral 950 */
+
+    --card:                   oklch(1 0 0);               /* White */
+    --card-foreground:        oklch(0.141 0.005 285.823); /* Neutral 950 */
+
+    --muted:                  oklch(0.961 0.005 285.823); /* Neutral 100 */
+    --muted-foreground:       oklch(0.45 0.010 285.823);  /* Neutral 500 */
+
+    --primary:                oklch(0.511 0.162 144.35);  /* Emerald 600 */
+    --primary-foreground:     oklch(0.985 0 0);           /* White */
+
+    --secondary:              oklch(0.94 0.005 285.823);  /* Neutral 200 */
+    --secondary-foreground:   oklch(0.141 0.005 285.823); /* Neutral 950 */
+
+    --destructive:            oklch(0.600 0.200 25);
+    --destructive-foreground: oklch(0.985 0 0);
+
+    --border:                 oklch(0.90 0.005 285.823);  /* Neutral 200 */
+    --input:                  oklch(0.90 0.005 285.823);  /* Neutral 200 */
+    --ring:                   oklch(0.511 0.162 144.35);  /* Emerald 600 */
+
+    --radius: 0.75rem;
+  }
+
+  /* Dark mode — DARK_MODE_GUIDE.md: neutral-950 bg, white text, emerald-400 primary */
+  .dark {
+    --background:             oklch(0.12 0.005 285.823);  /* Neutral 950 */
+    --foreground:             oklch(0.985 0 0);           /* White */
+
+    --card:                   oklch(0.17 0.005 285.823);  /* Neutral 900 */
+    --card-foreground:        oklch(0.985 0 0);           /* White */
+
+    --muted:                  oklch(0.22 0.005 285.823);  /* Neutral 800 */
+    --muted-foreground:       oklch(0.65 0.010 285.823);  /* Neutral 400 */
+
+    --primary:                oklch(0.707 0.165 154.834); /* Emerald 400 */
+    --primary-foreground:     oklch(0.12 0.005 285.823);  /* Neutral 950 */
+
+    --secondary:              oklch(0.274 0.005 285.823); /* Neutral 800 */
+    --secondary-foreground:   oklch(0.985 0 0);           /* White */
+
+    --destructive:            oklch(0.400 0.200 25);
+    --destructive-foreground: oklch(0.985 0 0);
+
+    --border:                 oklch(0.274 0.005 285.823); /* Neutral 800 */
+    --input:                  oklch(0.274 0.005 285.823); /* Neutral 800 */
+    --ring:                   oklch(0.44 0.010 285.823);  /* Neutral 600 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* ── NOISE OVERLAY — fixed, full-viewport, purely decorative ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease both;
+}
+
+/* ── HERO AMBIENT GLOW ── */
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(700px, 100vw);
+  height: 700px;
+  /* color-mix avoids the broken oklch(var(--primary) / 0.12) pattern */
+  background: radial-gradient(
+    ellipse,
+    color-mix(in oklch, var(--primary) 12%, transparent) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
