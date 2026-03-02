@@ -11,8 +11,9 @@ export const Footer: React.FC = () => {
 					<div className="col-span-2 md:col-span-1 lg:col-span-1">
 						<Logo className="h-10" />
 						<p className="text-[0.85rem] text-muted-foreground leading-relaxed max-w-xs mb-6">
-							Building trust infrastructure for Nigeria's rural corridor through
-							Sharia-compliant digital verification and agricultural finance.
+							An integrated enterprise spanning technology, agriculture, and
+							research — anchored in Islamic principles and built to serve
+							clients and communities across Nigeria and beyond.
 						</p>
 						<div className="text-[0.7rem] text-muted-foreground/60 tracking-wider">
 							RC: 1735921
